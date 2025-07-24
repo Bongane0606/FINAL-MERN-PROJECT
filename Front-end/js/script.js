@@ -193,3 +193,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Inside your frontend JS (e.g., script.js)
+fetch('http://localhost:5000/api/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // { message: "Hello from the backend!" }
+    document.getElementById('output').textContent = data.message;
+  })
+  .catch(error => console.error('Error:', error));
